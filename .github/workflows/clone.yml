@@ -1,0 +1,5 @@
+- name: Checkout repo with submodules
+  uses: actions/checkout@v2
+  with:
+    token: ${{ secrets.MY_GITHUB_TOKEN }}
+    submodules: 'recursive'  # Fetches all submodules recursively
