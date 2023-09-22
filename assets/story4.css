@@ -1,0 +1,203 @@
+/* Define the variables */
+:root {
+    --text-color: #ffffff;
+    --bright: #E4D9C9;
+    --color2: #36293D;
+    --color3: #B68CB8;
+    --color4: #F99FA6;
+    --dark: #001220;
+}
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    font-size: x-large;
+    background-color: var(--color2);
+    color: var(--text-color);
+}
+
+/* Floating bar CSS */
+
+.floating-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* Space out left, middle, and right content (if you add right content later) */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: black;
+    color: white;
+    padding: 5px 20px;
+    z-index: 1000;
+    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.2);
+    font-family: Montserrat, sans-serif;
+    letter-spacing: 0.1em;
+}
+
+.middle-content {
+    flex: 0 1 auto;
+    /* This ensures that the middle content doesn't stretch */
+    text-align: center;
+    max-width: 50%;
+    /* Restricts the width to half the screen - adjust as needed */
+    margin: 0 auto;
+    /* This will center the middle-content within the available space */
+}
+
+.left-section,
+.middle-content,
+.right-section {
+    flex: 1 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Add this line to center content */
+}
+
+.bar-button {
+    margin-left: 10px;
+    padding: 5px 10px;
+    background-color: white;
+    color: black;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 8px;
+}
+
+.bar-button:hover {
+    background-color: #ddd;
+}
+
+.bar-button:active {
+    background-color: #bbb;
+}
+
+.active-button {
+    background-color: var(--color3);  /* or any other color you prefer */
+    color: white;
+}
+
+/* End floating bar CSS */
+
+/* Transparent background for the Plyr player */
+/* Transparent background for the Plyr player */
+.plyr {
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    border-radius: 10px;
+}
+
+/* Ensure transparency for other Plyr components as needed */
+.plyr__controls {
+    background-color: transparent !important;
+}
+
+/* .plyr__control {
+    background-color: transparent !important;
+} */
+
+.big-title {
+    font-size: 2.5em;
+    font-weight: bold;
+    letter-spacing: 0.2em;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 2em;
+    font-weight: lighter;
+    letter-spacing: 0.1em;
+    text-align: center;
+}
+
+.flex-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+/* .block-wrapper {
+    margin-bottom: -10%;
+} */
+
+.block-wrapper:nth-child(6n+1) {
+    background-color: var(--color2);
+}
+
+.block-wrapper:nth-child(6n+3) {
+    background-color: var(--color3);
+}
+
+.block-wrapper:nth-child(6n+5) {
+    background-color: var(--color4);
+}
+
+.spacer:nth-child(6n+2) {
+    background-image: url("/assets/trans23.svg");
+}
+
+.spacer:nth-child(6n+4) {
+    background-image: url("/assets/trans34.svg");
+}
+
+.spacer:nth-child(6n+6) {
+    background-image: url("/assets/trans42.svg");
+}
+
+
+.text-block {
+    margin-top: 20px;
+}
+
+.ja,
+.english {
+    flex: 1;
+    padding: 0 5%;
+    font-size: larger;
+}
+
+.english {
+    font-family: Montserrat, sans-serif;
+}
+
+.ja {
+    font-family: UDMincho, serif;
+}
+
+.audio-container {
+    padding-left: 5%;
+    /* Adjust to match the padding of .ja and .english */
+}
+
+.text {
+    margin: 5%;
+}
+
+.hidden-en {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(100%);
+    transition: all 1s ease-in-out;
+}
+
+.hidden-ja {
+    opacity: 0;
+    filter: blur(5px);
+    transform: translateX(-100%);
+    transition: all 1s ease-in-out;
+}
+
+.show {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+.spacer {
+    aspect-ratio: 960/50;
+    width: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}

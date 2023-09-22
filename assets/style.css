@@ -1,0 +1,69 @@
+/* Define the variables */
+:root {
+    --primary-color1: #36293D;
+    --primary-color2: #E4D9C9;
+    --background-color: #F99FA6;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;  /* Ensure the container takes up full width */
+    background-color: var(--background-color);
+    line-height: 1.8;
+    color: var(--primary-color1);
+}
+
+.block {
+    display: flex;
+    gap: 2em;
+    margin-bottom: 2em;   /* Add some margin between blocks */
+    border: 1px solid var(--primary-color1)
+    padding: 1em;   /* Optional: some padding inside each block */
+}
+
+.columns {
+    width: 100%;
+}
+
+.column {
+    flex: 1;
+    padding: 1em;
+    border: 1px solid var(--primary-color1);
+    overflow-wrap: break-word;
+}
+
+.english {
+    background-color: var(--primary-color1);
+    color: var(--primary-color2);
+}
+
+.buttons {
+    margin-bottom: 1em;
+    display: flex;
+    gap: 1em;
+}
+
+.audio-widget {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.progress-bar {
+    flex-grow: 1;
+    height: 5px;
+    background-color: var(--primary-color1)
+    position: relative;
+}
+
+.progress {
+    height: 5px;
+    background-color: var(--primary-color2);
+    width: 0;
+}

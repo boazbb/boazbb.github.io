@@ -1,0 +1,72 @@
+/* Define the variables */
+:root {
+    --primary-color1: #2A2B2A;
+    --primary-color2: #FFF4E4;
+    --background-color: #F7E8A4;
+}
+
+/* Base styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    font-size: x-large;
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;  /* Ensure the container takes up full width */
+    background-color: var(--background-color);
+    line-height: 1.8;
+}
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Two columns of equal width */
+    gap: 80px; /* Space between columns and blocks */
+    padding: 20px;
+}
+
+.block {
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Adjust these styles */
+
+.container > .block:nth-child(odd) {
+    background-color: var(--primary-color1);
+    color: var(--primary-color2);
+}
+
+.container > .block:nth-child(even) {
+    background-color: var(--primary-color2);
+    color: var(--primary-color1);
+}
+
+.furi-controls {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.content-blocks {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap; /* Allow items to wrap */
+    justify-content: space-between;
+}
+
+.content {
+    width: 50%;
+    padding: 10px;
+    box-sizing: border-box;
+}
+
+.content.no-furi,
+.content.all-furi,
+.content.first-furi {
+    order: 1;
+}
+
+.content.english {
+    order: 2;
+    display: block; /* show the English column by default */
+}

@@ -1,0 +1,21 @@
+body {
+    background-color: #36293D;
+    font-size: x-large;
+}
+
+.preserve-breaks {
+    white-space: pre-line;
+}
+
+.dual-column {
+    display: flex;
+    justify-content: space-between; 
+    width: 100%;  /* Ensure the container takes up full width */
+}
+
+.column {
+    flex: 1;  /* Allow the columns to grow and take up equal space */
+    padding: 1rem;
+    border: 1px solid black; 
+    line-height: 1.8;
+}

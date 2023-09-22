@@ -1,0 +1,11 @@
+---
+layout: story
+title: My Bilingual Story
+content:
+  - en: English content for paragraph 1.
+    jp: Japanese content for paragraph 1.
+  - en: English content for paragraph 2.
+    jp: Japanese content for paragraph 2.
+---
+
+# {{ page.title }}

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=Montserrat:wght@200;400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/story4.css">
+    <!-- Plyr stylesheet -->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.6.4/plyr.css" />
+
+    <!-- Plyr script -->
+    <script src="https://cdn.plyr.io/3.6.4/plyr.js"></script>
+
+    <script defer src="/assets/app.js"></script>
+</head>
+
+<body>
+    <div class="floating-bar">
+        <div class="left-section">
+            芥川龍之介 - ピアノ
+        </div>
+        <div class="middle-content">
+
+        </div>
+        <div class="right-section">
+            <span>Furigana:</span>
+            <button class="bar-button" onclick="handleButtonClick(event, 'Off')">Off</button>
+            <button class="bar-button" onclick="handleButtonClick(event, 'First')">First</button>
+            <button class="bar-button active-button" onclick="handleButtonClick(event, 'On')">On</button>
+        </div>
+    </div>
+    </div>
+    <div class="content">
+        {% assign first_block = page.content_blocks[0] %}
+        <div class="block-wrapper">
+            <div class="flex-container big-title">
+                <div class="ja hidden-ja">
+                    <p class="text" data-ja_no_furi="{{ first_block.ja_no_furi }}" data-ja_first_furi="{{ first_block.ja_first_furi }}" data-ja_all_furi="{{ first_block.ja_all_furi }}">{{ first_block.ja_all_furi }}</p>
+                    <div class="audio-container">
+                        <audio class="player" controls>
+                            <source src="{{ first_block.audio_file_ja }}" type="audio/mp3">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+                <div class="english hidden-en">
+                    <p class="text">{{ first_block.english }}</p>
+                    <div class="audio-container">
+                        <audio class="player" controls>
+                            <source src="{{ first_block.audio_file_en }}" type="audio/mp3">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="spacer"></div>
+
+        {% assign second_block = page.content_blocks[1] %}
+        <div class="block-wrapper">
+            <div class="flex-container subtitle">
+                <div class="ja hidden-ja">
+                    <p class="text" data-ja_no_furi="{{ second_block.ja_no_furi }}" data-ja_first_furi="{{ second_block.ja_first_furi }}" data-ja_all_furi="{{ second_block.ja_all_furi }}">{{ second_block.ja_all_furi }}</p>
+                    <div class="audio-container">
+                        <audio class="player" controls>
+                            <source src="{{ second_block.audio_file_ja }}" type="audio/mp3">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+                <div class="english hidden-en">
+                    <p class="text">{{ second_block.english }}</p>
+                    <div class="audio-container">
+                        <audio class="player" controls>
+                            <source src="{{ second_block.audio_file_en }}" type="audio/mp3">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% for block in page.content_blocks offset:2 %}
+        <div class="spacer"></div>
+        <div class="block-wrapper">
+            <div class="flex-container">
+                <div class="ja hidden-ja">
+                    <p class="text" data-ja_no_furi="{{ block.ja_no_furi }}" data-ja_first_furi="{{ block.ja_first_furi }}" data-ja_all_furi="{{ block.ja_all_furi }}">{{ block.ja_all_furi }}</p>
+                    <div class="audio-container">
+                        <audio class="player" controls>
+                            <source src="{{ block.audio_file_ja }}" type="audio/mp3">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+                <div class="english hidden-en">
+                    <p class="text">{{ block.english }}</p>
+                    <div class="audio-container">
+                        <audio class="player" controls>
+                            <source src="{{ block.audio_file_en }}" type="audio/mp3">
+                            Your browser does not support the audio tag.
+                        </audio>
+                    </div>
+                </div>
+            </div>
+            <div class="wave-container"></div>
+        </div>
+        {% endfor %}
+    </div>
+</body>
+
+</html>

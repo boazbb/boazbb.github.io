@@ -1,0 +1,21 @@
+<!-- _layouts/story.html -->
+---
+layout: default
+---
+
+<div class="bilingual">
+    <div class="column english">
+        {% for paragraph in page.content %}
+        <div class="block" style="background-color: {% cycle '#f5f5f5', '#333' %}; color: {% cycle 'black', 'white' %};">
+            {{ paragraph.en }}
+        </div>
+        {% endfor %}
+    </div>
+    <div class="column japanese">
+        {% for paragraph in page.content %}
+        <div class="block" style="background-color: {% cycle '#333', '#f5f5f5' %}; color: {% cycle 'white', 'black' %};">
+            {{ paragraph.jp }}
+        </div>
+        {% endfor %}
+    </div>
+</div>

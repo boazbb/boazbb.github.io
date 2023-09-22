@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ page.title }}</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=BIZ+UDMincho&family=Montserrat:wght@200;400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/assets/style.css">
+</head>
+<body>
+    <div class="right-top">
+        <div class="buttons">
+            <button id="noFuri">No Furigana</button>
+            <button id="allFuri">All Furigana</button>
+            <button id="firstFuri">First Furigana</button>
+        </div>
+    </div>
+    <div class="content">
+        <div class="columns">
+            {% for block in page.content_blocks %}
+                <div class="block">
+                    <div class="column english">
+                        <p>{{ block.english }}</p>
+                    </div>
+                    <div class="column japanese" id="japaneseContent">
+                        <p data-no-furi="{{ block.ja_no_furi }}" data-all-furi="{{ block.ja_all_furi }}" data-first-furi="{{ block.ja_first_furi }}">{{ block.ja_all_furi }}</p>
+                        <button class="play-btn" data-audio="{{ block.audio_file }}">Play</button>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+    <div class="middle-bottom">
+        <div class="audio-widget">
+            <button class="play-btn" hidden>Play</button>
+            <button class="pause-btn">Pause</button>
+            <button class="stop-btn">Stop</button>
+            <div class="progress-container">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="/assets/story.js"></script>
+</body>
+</html>
