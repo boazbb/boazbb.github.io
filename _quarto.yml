@@ -1,0 +1,21 @@
+project:
+  type: website
+  output-dir: docs
+
+website:
+  title: "Boaz Bibi"
+  navbar:
+    left:
+      - href: index.qmd
+        text: Home
+      - href: about.qmd
+        text: About
+
+execute:
+  freeze: auto
+
+format:
+  html:
+    theme: cosmo
+
+jupyter: python3
