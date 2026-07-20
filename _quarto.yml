@@ -4,6 +4,7 @@ project:
 
 website:
   title: "Boaz Bibi"
+  site-url: https://boazbb.github.io
   navbar:
     left:
       - href: index.qmd
